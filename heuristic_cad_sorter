@@ -140,7 +140,7 @@ def pipeline_split_and_sort_v8():
             cnt['sanit'] += 1
             
         # 2. VIP CHECK (Identity + Curvature)
-        # If it wasn't named properly, we check the geometry fingerprint
+        # Identify un-named CAD blocks based on vertex count fingerprints.
         elif p_count in DOOR_VIP_COUNTS:
             if USE_STRICT_CURVE:
                 if is_curved(obj):
@@ -185,5 +185,6 @@ def pipeline_split_and_sort_v8():
     print(f"Check/Unknown:   {cnt['check']}")
     print(f"Medium Objects:  {cnt['med']}")
     print("-" * 30)
+
 
 pipeline_split_and_sort_v8()
